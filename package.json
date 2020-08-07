@@ -1,0 +1,29 @@
+{
+  "name": "feathers-nats",
+  "version": "4.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "docker-compose -f docker-compose.yml up -d --build --remove-orphans",
+    "stop": "docker-compose -f docker-compose.yml down --volumes --remove-orphans",
+    "test": "jest --detectOpenHandles --forceExit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@feathersjs/errors": "4.5.3",
+    "@feathersjs/socketio": "^4.5.4",
+    "debug": "4.1.1",
+    "nats": "1.4.9"
+  },
+  "devDependencies": {
+    "@feathersjs/express": "4.5.4",
+    "@feathersjs/feathers": "4.5.3",
+    "@feathersjs/socketio-client": "^4.5.4",
+    "delay": "^4.3.0",
+    "feathers-mongoose": "8.3.0",
+    "jest": "25.5.4",
+    "mongoose": "5.9.6",
+    "socket.io-client": "^2.3.0"
+  }
+}

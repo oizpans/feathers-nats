@@ -1,0 +1,10 @@
+{
+  "window.title": "feathers-nats",
+  "files.associations": {
+    ".env*": "dotenv"
+  },
+  "html.format.indentHandlebars": true,
+  "html.format.maxPreserveNewLines": 1,
+  "html.format.wrapLineLength": 180,
+  "editor.formatOnSave": true
+}
