@@ -3,26 +3,26 @@ version: "3.8"
 x-defaults: &default
   restart: unless-stopped
   labels:
-    project: "feathers-mq"
+    project: "feathers-nats"
   env_file:
     - .env
 
 services:
   mongo:
     <<: *default
-    container_name: feathers-mq-mongo_${ENVIRONMENT}
+    container_name: feathers-mongo_${ENVIRONMENT}
     image: mongo:4.2.3-bionic
     networks:
       - private
     volumes:
-      - feathers-mq-mongo:/data/db
-      - feathers-mq-mongo:/data/configdb
+      - feathers-mongo:/data/db
+      - feathers-mongo:/data/configdb
     ports:
       - "${HOST_IP}:27017:27017"
 
   nats:
     <<: *default
-    container_name: feathers-mq-nats_${ENVIRONMENT}
+    container_name: feathers-nats_${ENVIRONMENT}
     image: nats:2.1.7-linux
     networks:
       - private
@@ -31,9 +31,9 @@ services:
       - "${HOST_IP}:6222:6222"
       - "${HOST_IP}:8222:8222"
 
-  feathers-mq:
+  test:
     <<: *default
-    container_name: feathers-mq-test_${ENVIRONMENT}
+    container_name: feathers-test_${ENVIRONMENT}
     build: .
     networks:
       - private
@@ -41,7 +41,7 @@ services:
       - nats
     #command: npm run start:${ENVIRONMENT}
     volumes:
-      - feathers-mq-node_modules:/app/node_modules
+      - test-node_modules:/app/node_modules
       - ./:/app
 
     command: tail -f /dev/null
@@ -54,5 +54,5 @@ networks:
       driver: default
 
 volumes:
-  feathers-mq-node_modules:
-  feathers-mq-mongo:
+  test-node_modules:
+  feathers-mongo:
