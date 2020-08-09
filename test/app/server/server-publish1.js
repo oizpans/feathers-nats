@@ -19,15 +19,13 @@ app.set('name', 'ServerAppName_prod');
 
 global.NAME = 'ServerAppName_prod';
 
+app.configure(services);
 app.configure(
   Server({
     url: 'nats://nats:4222',
     json: true,
   })
 );
-
-app.configure(services);
-
 app.configure(
   Publish(
     {

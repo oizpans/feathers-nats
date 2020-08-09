@@ -12,7 +12,7 @@ describe('Integration Test', () => {
 
   it('Timeout error when there is no active app with specified app name', async () => {
     try {
-      const result = await client1.service(`ServerAppName_test.products`).create({
+      const result = await client1.service(`nonExistingApp.products`).create({
         name: 'testproduct',
         price: '100',
       });
@@ -30,9 +30,7 @@ describe('Integration Test', () => {
       });
     } catch (error) {
       expect(error.code).toEqual(500);
-      expect(error.message).toEqual(
-        `Feathers-nats server: Service nonExistingService is not found on ServerAppName_test`
-      );
+      expect(error.message).toEqual(`Request REQ_TIMEOUT on NATS for ServerAppName_test.nonExistingService.create`);
     }
   });
 

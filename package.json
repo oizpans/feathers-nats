@@ -1,6 +1,6 @@
 {
   "name": "feathers-nats",
-  "version": "4.0.2",
+  "version": "4.1.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {

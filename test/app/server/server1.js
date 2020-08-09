@@ -18,14 +18,12 @@ const app = express(feathers());
 app.set('name', 'ServerAppName_test');
 
 global.NAME = 'ServerAppName_test';
-
+app.configure(services);
 app.configure(
   Server({
     url: 'nats://nats:4222',
     json: true,
   })
 );
-
-app.configure(services);
 
 module.exports = app;

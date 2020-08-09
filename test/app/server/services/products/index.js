@@ -1,5 +1,5 @@
 const service = require('feathers-mongoose');
-const Model = require('../../models/product');
+const Model = require('./model');
 const hooks = require('./hooks');
 
 module.exports = function products(app) {
