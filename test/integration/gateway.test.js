@@ -41,7 +41,7 @@ describe('Integration Test', () => {
     expect(product).toBeTruthy();
   });
 
-  it('Can call updated method on gateway and get a response', async () => {
+  it('Can call update method on gateway and get a response', async () => {
     let product;
     client1.service(`ServerAppName.products`).on('updated', (result) => {
       product = result;

@@ -1,20 +1,13 @@
 module.exports = {
   before: {
-    all: [],
-    find: [],
-    get: [],
-    create: [
+    all: [
       (context) => {
-        // Skip sending event
         context.event = null;
       },
-
-      async (context) => {
-        // console.log('gateway create');
-
-        return context;
-      },
     ],
+    find: [],
+    get: [],
+    create: [],
     update: [],
     patch: [],
     remove: [],

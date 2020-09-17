@@ -22,7 +22,6 @@ app.configure(
 );
 
 app.configure(services);
-
 app.configure(
   Subscribe(
     {

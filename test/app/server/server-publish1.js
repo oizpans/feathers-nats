@@ -26,6 +26,7 @@ app.configure(
     json: true,
   })
 );
+
 app.configure(
   Publish(
     {
