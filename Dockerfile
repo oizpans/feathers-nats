@@ -1,13 +1,7 @@
-FROM node:12.16.1-alpine
-
-RUN apk update && apk upgrade && apk add --no-cache bash git openssh
-
+FROM node:14.15.3-stretch-slim
+RUN apt update && apt upgrade -y && apt install -y git
 WORKDIR /app
-
 COPY package*.json ./
-
 RUN npm ci
-
 COPY ./ ./
-
 CMD ["echo", "NO COMMAND"]

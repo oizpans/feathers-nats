@@ -11,7 +11,7 @@ services:
   mongo:
     <<: *default
     container_name: feathers-mongo_${ENVIRONMENT}
-    image: mongo:4.2.3-bionic
+    image: mongo:4.4.2-bionic
     networks:
       - private
     volumes:
@@ -23,7 +23,7 @@ services:
   nats:
     <<: *default
     container_name: feathers-nats_${ENVIRONMENT}
-    image: nats:2.1.7-linux
+    image: nats:2.1.9-linux
     networks:
       - private
     ports:
