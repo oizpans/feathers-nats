@@ -15,9 +15,9 @@ mongoose.connect('mongodb://root:tmp12345@mongo:27017/feathers-mq_test2?authSour
 
 const app = express(feathers());
 
-app.set('name', 'ServerAppName_prod');
+app.set('application', 'ServerAppName_prod');
 
-global.NAME = 'ServerAppName_prod';
+global.APPLICATION = 'ServerAppName_prod';
 
 app.configure(services);
 app.configure(

@@ -21,9 +21,9 @@ mongoose.connect('mongodb://root:tmp12345@mongo:27017/feathers_pubsub?authSource
 
 const app = express(feathers());
 
-app.set('name', 'Subscribe_test');
+app.set('application', 'Subscribe_test');
 
-global.NAME = 'Subscribe_test';
+global.APPLICATION = 'Subscribe_test';
 
 app.configure(
   Server({

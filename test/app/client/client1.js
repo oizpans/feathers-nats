@@ -3,9 +3,9 @@ const { Client } = require('../../../lib');
 
 const app = feathers();
 
-app.set('name', 'ClientAppName_test');
+app.set('application', 'ClientAppName_test');
 
-global.NAME = 'ClientAppName_test';
+global.APPLICATION = 'ClientAppName_test';
 
 app.configure(
   Client({

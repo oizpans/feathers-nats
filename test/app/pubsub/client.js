@@ -9,9 +9,9 @@ const nats = Instance({
   timeout: 2000,
 });
 
-app.set('name', 'Publish_test');
+app.set('application', 'Publish_test');
 
-global.NAME = 'Publish_test';
+global.APPLICATION = 'Publish_test';
 
 app.configure(
   Client({

@@ -10,9 +10,9 @@ const app = express(feathers());
 
 app.configure(socketio());
 
-app.set('name', 'Gateway_test');
+app.set('application', 'Gateway_test');
 
-global.NAME = 'Gateway_test';
+global.APPLICATION = 'Gateway_test';
 
 app.configure(
   Client({
